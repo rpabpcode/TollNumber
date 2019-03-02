@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Validations
   def check_string(string)
     string.scan(/\D/).empty? # Make sure that string contains only numbers
