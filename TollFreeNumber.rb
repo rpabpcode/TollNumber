@@ -1,15 +1,17 @@
 require 'byebug'
 
-def letter_combinations(numbers)
+FILE_PATH = "dictionary.txt"
 
-  file_path = "dictionary.txt"
+def letter_combinations(numbers)
   # verify the number is valid and does not contains eihter "0" or "1"
   if numbers.nil? || numbers.length != 10 || numbers.count("01") > 0
     p "Not a valid Number and Exiting!"
-  else
-    if not File.exist?('dictionary.txt') # Verify the dictionary file exists or not
-      p "Dictionary file does not exist and Exiting"
-    end
+    return
+  end
+
+  # Verify the dictionary file exists or not
+  if not File.exist?(FILE_PATH)
+    p "Dictionary file does not exist and Exiting"
     return
   end
 
@@ -20,4 +22,4 @@ def letter_combinations(numbers)
 
 end
 
-letter_combinations("4646525462")
+letter_combinations("4646525492")
